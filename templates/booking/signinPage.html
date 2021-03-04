@@ -11,7 +11,7 @@
     <h3>Sign In</h3>
     <form method="POST" action="{% url 'sign_in' %}">
       {% if message %}
-      <p>{{message}}</p>
+      <p class="message">{{message}}</p>
       {% endif %} {% csrf_token %}
       <p>Email</p>
       <input
