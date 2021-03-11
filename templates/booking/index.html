@@ -1,7 +1,53 @@
-{% extends 'base.html' %} {% block content %}
-<h1 style="color: white">Hello this is the Home Page</h1>
+{% extends './base.html' %} {% load static %} {' '} {% block style %}
+<style>
+  .home_content {
+    border: 5px solid white;
+    color: white;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    padding: 16px;
+  }
+  .home_content h1 {
+    font-size: 50px;
+    text-align: center;
+    padding: 8px;
+  }
+  .home_content p {
+    font-size: 50px;
+    text-align: center;
+    padding: 8px;
+  }
+</style>
+{% endblock %} {' '} {% block content %}
+<div class="home_content">
+  <h1>Welcome to Ticketrrrr</h1>
+  <p id="home_info"></p>
+</div>
 <form method="POST" action="{% url 'log_out' %}">
   {% csrf_token %}
   <button>Logout</button>
 </form>
+{% endblock %} {% block script %}
+<script>
+  let i = 0;
+  let txt =
+    "The tickets for your favourite movies,concerts,sporting events are just oneclick away.";
+
+  function typeWriter() {
+    if (i < txt.length) {
+      document.getElementById("home_info").innerHTML += txt.charAt(i);
+      i++;
+      setTimeout(typeWriter, 100);
+    } else {
+      setTimeout(() => {
+        i = 0;
+        document.getElementById("home_info").innerHTML = "";
+        typeWriter();
+      }, 1000);
+    }
+  }
+  typeWriter();
+</script>
 {% endblock %}

@@ -1,0 +1,78 @@
+{% extends './base.html' %} {% load static %} {% block style %}
+<link rel="stylesheet" href="{% static 'booking/css/otherPageNav.css' %}" />
+<link rel="stylesheet" href="{% static 'booking/css/payment.css' %}" />
+{% endblock %} {% block content %}
+<div class="payment">
+  <div class="payment_header">
+    <h1>Confirm Ticket</h1>
+    <p><i class="fas fa-times"></i></p>
+  </div>
+  <hr />
+  <div class="payment_info">
+    <div class="payment_ticket_details">
+      <div class="payment_ticket_image">
+        <div class="payment_ticket_header"></div>
+        <img src="{% static 'booking/images/mov.jpg' %}" alt="ticket_image" />
+        <div class="payment_ticket_info">
+          <h1>The kapil sharma show</h1>
+          <div class="payment_ticket_price">
+            <p class="payment_ticket_price_value">₹ 300</p>
+            <p>⭐⭐⭐⭐⭐</p>
+          </div>
+        </div>
+      </div>
+      <div class="payment_cards">
+        <img
+          src="https://www.pngfind.com/pngs/m/471-4717614_visa-logo-png-transparent-visa-card-vector-png.png"
+          id="visa"
+        />
+        <img
+          id="master"
+          src="https://img.favpng.com/0/12/17/mastercard-credit-card-payment-visa-nyse-ma-png-favpng-n2pqLqnZWVqJSFS9UmqsPydSN.jpg"
+        />
+        <img
+          id="rupay"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8hzHuv8J7mTWG20pUkA21BZHJoBx9j8P3IjY0ZZGMuJvN3KcT-JfrtdUVo1_6BrXpj5M&usqp=CAU"
+        />
+        <img
+          id="maestro"
+          src="https://cdn1.iconfinder.com/data/icons/credit-card-icons/512/maestro.png"
+        />
+      </div>
+    </div>
+    <div class="payment_details">
+      <div class="payment_details_firstLine">
+        <div class="payment_details_firstLine_name">
+          <p>Name on Card</p>
+          <input type="text" placeholder="Your Name" />
+        </div>
+        <div class="payment_details_firstLine_postal">
+          <p>Postal Code</p>
+          <input type="number" placeholder="Your Name" />
+        </div>
+      </div>
+      <div class="payment_details_secondLine">
+        <p>Card Number (no spaces or dashes)</p>
+        <input type="text" placeholder="0123XXXXXXXXXXXX" />
+      </div>
+      <div class="payment_details_thirdLine">
+        <div class="payment_details_thirdLine_expiration">
+          <div class="expire_info">
+            <p>Expiration</p>
+            <div class="expire_date">
+              <input type="number" placeholder="MM" />
+              <p>/</p>
+              <input type="number" placeholder="YY" />
+            </div>
+          </div>
+          <div class="expire_cvv">
+            <p>CVV</p>
+            <input type="number" placeholder="123" />
+          </div>
+        </div>
+      </div>
+      <button class="pay_now">Pay Now</button>
+    </div>
+  </div>
+  {% endblock %}
+</div>

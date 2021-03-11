@@ -5,7 +5,7 @@
 
 body {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("images/background.jpg") no-repeat;
+    url("../images/background.jpg") no-repeat fixed;
   font-family: sans-serif;
   background-size: cover;
 }

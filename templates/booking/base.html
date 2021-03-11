@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ticketrrr.in</title>
+    <link rel="stylesheet" href="{% static 'booking/css/index.css' %}" />
+    {% block style %} {% endblock %}
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <h1 class="navbar_title"><a href="{% url 'index' %}">Ticketrrr </a></h1>
+      <div class="navbar_search">
+        <input type="text" class="navbar_input" placeholder="Enter anything" />
+        <i style="color: grey; cursor: pointer" class="fas fa-search"></i>
+      </div>
+      <div class="navbar_right">
+        <ul>
+          <li><a href="{% url 'movies' %}">Movies </a></li>
+          <li><a href="{% url 'events' %}">Events</a></li>
+          <li><a href="{% url 'sports' %}">Sports </a></li>
+          <li><a href="{% url 'activities' %}">Activities </a></li>
+        </ul>
+        <p class="navbar_location">Choose location</p>
+        <p class="navbar_profile">Your profile</p>
+      </div>
+    </nav>
+    {% block content %} {% endblock %}
+  </body>
+  {% block script %} {% endblock %}
+</html>

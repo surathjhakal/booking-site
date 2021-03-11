@@ -1,0 +1,10 @@
+body {
+  animation: none;
+}
+.navbar {
+  background-color: #777171;
+}
+.navbar_right ul li a:hover {
+  background-color: white;
+  color: #4b2222;
+}

@@ -25,7 +25,6 @@ def sign_up(request):
                 user = MySiteUser.objects.get(number=number)
                 return render(request, 'booking/signupPage.html', {'message': 'This phone number is already registered'})
             except:
-                print("found")
                 new_user = MySiteUser(name=name, email=email, number=number,
                                       password=password)
                 new_user.save()
@@ -40,8 +39,6 @@ def sign_in(request):
         try:
             user = MySiteUser.objects.get(email=email)
             if user.password == password:
-                # file = open('booking/allow.txt', 'w')
-                # file.write('True')
                 request.session['uid'] = request.POST['user_email']
                 return redirect('index')
             else:
@@ -52,7 +49,25 @@ def sign_in(request):
 
 
 def log_out(request):
-    # file = open('booking/allow.txt', 'r')
-    # data = file.read()
     del request.session['uid']
     return redirect('index')
+
+
+def payment(request):
+    return render(request, 'booking/payment.html')
+
+
+def movies(request):
+    return render(request, 'booking/movies.html')
+
+
+def events(request):
+    return render(request, 'booking/events.html')
+
+
+def sports(request):
+    return render(request, 'booking/sports.html')
+
+
+def activities(request):
+    return render(request, 'booking/activities.html')
