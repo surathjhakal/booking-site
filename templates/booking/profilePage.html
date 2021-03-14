@@ -1,0 +1,56 @@
+{% extends './base.html' %} {% load static %} {% block style %}
+<link rel="stylesheet" href="{% static 'booking/css/otherPageNav.css' %}" />
+<link rel="stylesheet" href="{% static 'booking/css/profilePage.css' %}" />
+<style></style>
+{% endblock %} {% block content %}
+<div class="profilePage_top">
+  <div class="profilePage">
+    <div class="profilePage_header">
+      <img
+        src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8aHVtYW58ZW58MHx8MHw%3D&ixlib=rb-1.2.1&w=1000&q=80"
+        alt="image"
+        class="profilePage_image"
+      />
+      <div class="profilePage_header_info">
+        <h2>Surath Jhakal</h2>
+        <p>Mumbai,India</p>
+      </div>
+    </div>
+    <div class="profilePage_info">
+      <div class="profilePage_info_line1">
+        <div class="profilePage_name">
+          <p>Name</p>
+          <input type="text" value="Surath" />
+        </div>
+        <div class="profilePage_name">
+          <p>Last Name</p>
+          <input type="text" value="Jhakal" />
+        </div>
+      </div>
+      <div class="profilePage_info_line2">
+        <div class="profilePage_email">
+          <p>Email Address</p>
+          <input type="text" value="jhakal.surath@gmail.com" readonly />
+        </div>
+        <div class="profilePage_phoneNumber">
+          <p>Phone Number</p>
+          <input type="number" value="9136890967" />
+        </div>
+      </div>
+      <div class="profilePage_info_line3">
+        <div class="profilePage_location">
+          <p>Location</p>
+          <input type="text" placeholder="e.g. Mumbai,India" />
+        </div>
+        <div class="profilePage_postalCode">
+          <p>Postal Code</p>
+          <input type="number" placeholder="e.g. 327684" />
+        </div>
+      </div>
+    </div>
+    <div class="profilePage_save_changes">
+      <button type="submit">Save Changes</button>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -10,4 +10,5 @@ urlpatterns = [
     path('events', views.events, name='events'),
     path('sports', views.sports, name='sports'),
     path('activities', views.activities, name='activities'),
+    path('profilePage', views.profilePage, name='profilePage')
 ]

@@ -29,11 +29,78 @@
           <li><a href="{% url 'sports' %}">Sports </a></li>
           <li><a href="{% url 'activities' %}">Activities </a></li>
         </ul>
-        <p class="navbar_location">Choose location</p>
-        <p class="navbar_profile">Your profile</p>
+        <!-- <p class="navbar_location">Choose location</p> -->
+        <div class="navbar_area">
+          <select name="city" class="navbar_location">
+            <option value="mumbai">Mumbai</option>
+            <option value="banglore">Banglore</option>
+            <option value="delhi">Delhi</option>
+            <option value="pune">Pune</option>
+            <option value="jaipur">Jaipur</option>
+            <option value="kolkata">Kolkata</option>
+            <option value="kerala">Kerala</option>
+          </select>
+          <i class="fas fa-angle-down"></i>
+        </div>
+        <p class="navbar_profile"><i class="fas fa-align-justify"></i></p>
       </div>
     </nav>
+    <div class="page">
+      <h1>Hello, Tamanna</h1>
+      <p>Your Profile</p>
+      <p>Notifications</p>
+      <p>Booking History</p>
+      <p>Rewards</p>
+      <p>Donate</p>
+      <p>Help & Support</p>
+      <p>Settings</p>
+      <p><a class="navbar_logout" href="{% url 'log_out' %}">Logout </a></p>
+    </div>
+    <p class="dim"></p>
     {% block content %} {% endblock %}
   </body>
+  <script>
+    let data = document.getElementsByClassName("page")[0];
+    let dim = document.getElementsByClassName("dim")[0];
+    const navbar_profile = document.getElementsByClassName("navbar_profile")[0];
+    const navbar = document.getElementsByClassName("navbar")[0];
+    let show = false;
+    const path = window.location.pathname;
+    const body = document.getElementsByTagName("body")[0];
+
+    function showProfile() {
+      if (path === "/") {
+        if (show === true) {
+          data.style.display = "none";
+          dim.style.display = "none";
+          navbar.style.background = "none";
+          body.style.overflow = "visible";
+          show = false;
+        } else {
+          dim.style.display = "flex";
+          data.style.display = "flex";
+          navbar.style.background = "rgba(31, 29, 29, 0.6)";
+          show = true;
+          body.style.overflow = "hidden";
+        }
+      } else {
+        if (show === true) {
+          data.style.display = "none";
+          dim.style.display = "none";
+          navbar.style.background = "#582c2c";
+          show = false;
+          body.style.overflow = "visible";
+        } else {
+          dim.style.display = "flex";
+          data.style.display = "flex";
+          navbar.style.background = "#582c2c";
+          show = true;
+          body.style.overflow = "hidden";
+        }
+      }
+    }
+    // console.log(window.location.pathname);
+    navbar_profile.addEventListener("click", showProfile);
+  </script>
   {% block script %} {% endblock %}
 </html>

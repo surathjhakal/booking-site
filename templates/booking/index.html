@@ -25,10 +25,6 @@
   <h1>Welcome to Ticketrrrr</h1>
   <p id="home_info"></p>
 </div>
-<form method="POST" action="{% url 'log_out' %}">
-  {% csrf_token %}
-  <button>Logout</button>
-</form>
 {% endblock %} {% block script %}
 <script>
   let i = 0;

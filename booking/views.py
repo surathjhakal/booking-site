@@ -71,3 +71,7 @@ def sports(request):
 
 def activities(request):
     return render(request, 'booking/activities.html')
+
+
+def profilePage(request):
+    return render(request, 'booking/profilePage.html')

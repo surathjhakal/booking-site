@@ -2,9 +2,39 @@ body {
   animation: none;
 }
 .navbar {
-  background-color: #777171;
+  background-color: #582c2c;
 }
-.navbar_right ul li a:hover {
+.navbar_right ul li a:hover,
+.navbar_location:hover,
+.navbar_profile:hover ,
+.navbar_area:hover{
   background-color: white;
+  color: #4b2222;
+}
+
+.navbar_location option {
+  background-color: white;
+}
+
+.page {
+  background-color: #582c2c;
+  color: white;
+}
+
+.navbar_logout {
+  color: white;
+}
+
+.dim {
+  height: 100vh;
+}
+
+.navbar_area:hover {
+  background-color: white;
+  color: #4b2222;
+}
+
+.navbar_location:hover{
+  /* background: none; */
   color: #4b2222;
 }
