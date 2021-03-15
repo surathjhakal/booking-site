@@ -10,9 +10,10 @@
 }
 
 .profilePage{
-    height: 600px;
+    height: 65vh;
     width: 600px;
     background-color: rgb(245, 243, 243);
+    /* background-color: yellowgreen; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;

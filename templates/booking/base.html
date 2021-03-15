@@ -46,15 +46,15 @@
       </div>
     </nav>
     <div class="page">
-      <h1>Hello, Tamanna</h1>
-      <p>Your Profile</p>
+      <h1>Hello, Surath</h1>
+      <p><a class="" href="{% url 'profilePage' %}">Your Profile </a></p>
       <p>Notifications</p>
       <p>Booking History</p>
       <p>Rewards</p>
       <p>Donate</p>
       <p>Help & Support</p>
       <p>Settings</p>
-      <p><a class="navbar_logout" href="{% url 'log_out' %}">Logout </a></p>
+      <p><a id="log_out" href="{% url 'log_out' %}">Logout </a></p>
     </div>
     <p class="dim"></p>
     {% block content %} {% endblock %}
