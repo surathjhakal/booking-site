@@ -16,12 +16,12 @@ body {
   background-color: white;
 }
 
-.page {
+.page{
   background-color: #582c2c;
   color: white;
 }
 
-.page a {
+.page a, .page h1  {
   color: white;
 }
 
@@ -34,7 +34,6 @@ body {
   color: #4b2222;
 }
 
-.navbar_location:hover{
-  /* background: none; */
+.navbar_location:hover,.page a:hover{
   color: #4b2222;
 }

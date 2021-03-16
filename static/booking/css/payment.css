@@ -15,6 +15,7 @@ body {
   padding: 16px 24px;
   display: flex;
   flex-direction: column;
+  z-index: 1;
 }
 
 .payment_header {

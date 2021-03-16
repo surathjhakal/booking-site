@@ -7,50 +7,86 @@
   <div class="profilePage">
     <div class="profilePage_header">
       <img
-        src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8aHVtYW58ZW58MHx8MHw%3D&ixlib=rb-1.2.1&w=1000&q=80"
+        src="{{ userData.image.url }}"
         alt="image"
         class="profilePage_image"
       />
       <div class="profilePage_header_info">
-        <h2>Surath Jhakal</h2>
-        <p>Mumbai,India</p>
+        <h2>{{userData.name}}</h2>
+        <p>{% firstof userData.location %}</p>
       </div>
     </div>
-    <div class="profilePage_info">
+    <form
+      method="POST"
+      action="{% url 'profilePage' %}"
+      enctype="multipart/form-data"
+      class="profilePage_info"
+      id="pp"
+    >
+      {% csrf_token %}
       <div class="profilePage_info_line1">
         <div class="profilePage_name">
           <p>Name</p>
-          <input type="text" value="Surath" />
+          <input type="text" name="user_firstName" value="{{name.0}}" />
         </div>
         <div class="profilePage_name">
           <p>Last Name</p>
-          <input type="text" value="Jhakal" />
+          <input type="text" value="{{name.1}}" name="user_lastName" />
         </div>
       </div>
       <div class="profilePage_info_line2">
         <div class="profilePage_email">
           <p>Email Address</p>
-          <input type="text" value="jhakal.surath@gmail.com" readonly />
+          <input type="text" value="{{userData.email}}" readonly />
         </div>
-        <div class="profilePage_phoneNumber">
-          <p>Phone Number</p>
-          <input type="number" value="9136890967" />
+        <div class="profilePage_password">
+          <p>Password</p>
+          <input type="text" value="••••••••" readonly />
         </div>
       </div>
       <div class="profilePage_info_line3">
-        <div class="profilePage_location">
-          <p>Location</p>
-          <input type="text" placeholder="e.g. Mumbai,India" />
+        <div class="profilePage_phoneNumber">
+          <p>Phone Number</p>
+          <input type="number" value="{{userData.number}}" readonly />
         </div>
-        <div class="profilePage_postalCode">
-          <p>Postal Code</p>
-          <input type="number" placeholder="e.g. 327684" />
+        <div class="profilePage_gender">
+          <p>Gender</p>
+          <input
+            type="text"
+            placeholder="e.g. Male or Female"
+            value="{% firstof userData.gender %}"
+            name="user_gender"
+          />
         </div>
       </div>
-    </div>
+      <div class="profilePage_info_line4">
+        <div class="profilePage_location">
+          <p>Location</p>
+          <input
+            type="text"
+            placeholder="e.g. Mumbai,India"
+            value="{% firstof userData.location %}"
+            name="user_location"
+          />
+        </div>
+        <div class="profilePage_postal_code">
+          <p>Postal Code</p>
+          <input
+            type="number"
+            placeholder="e.g. 327684"
+            value="{{userData.postal_code}}"
+            name="user_postal_code"
+          />
+        </div>
+      </div>
+    </form>
     <div class="profilePage_save_changes">
-      <button type="submit">Save Changes</button>
+      <button type="submit" form="pp" onclick="return validate()">
+        Save Changes
+      </button>
     </div>
   </div>
 </div>
+{% endblock %} {% block script %}
+<script src="{% static 'booking/authValidation/profilePageAuth.js' %}"></script>
 {% endblock %}

@@ -8,7 +8,8 @@ from django.urls import reverse
 def index(request):
     if not request.session.has_key('uid'):
         return redirect('sign_in')
-    return render(request, 'booking/index.html')
+    userData = MySiteUser.objects.get(email=request.session["uid"])
+    return render(request, 'booking/index.html', {'userData': userData, 'name': userData.name.split()})
 
 
 def sign_up(request):
@@ -54,24 +55,52 @@ def log_out(request):
 
 
 def payment(request):
-    return render(request, 'booking/payment.html')
+    if not request.session.has_key('uid'):
+        return redirect('sign_in')
+    userData = MySiteUser.objects.get(email=request.session["uid"])
+    return render(request, 'booking/payment.html', {'userData': userData, 'name': userData.name.split()})
 
 
 def movies(request):
-    return render(request, 'booking/movies.html')
+    if not request.session.has_key('uid'):
+        return redirect('sign_in')
+    userData = MySiteUser.objects.get(email=request.session["uid"])
+    return render(request, 'booking/movies.html', {'userData': userData, 'name': userData.name.split()})
 
 
 def events(request):
-    return render(request, 'booking/events.html')
+    if not request.session.has_key('uid'):
+        return redirect('sign_in')
+    userData = MySiteUser.objects.get(email=request.session["uid"])
+    return render(request, 'booking/events.html', {'userData': userData, 'name': userData.name.split()})
 
 
 def sports(request):
-    return render(request, 'booking/sports.html')
+    if not request.session.has_key('uid'):
+        return redirect('sign_in')
+    userData = MySiteUser.objects.get(email=request.session["uid"])
+    return render(request, 'booking/sports.html', {'userData': userData, 'name': userData.name.split()})
 
 
 def activities(request):
-    return render(request, 'booking/activities.html')
+    if not request.session.has_key('uid'):
+        return redirect('sign_in')
+    userData = MySiteUser.objects.get(email=request.session["uid"])
+    return render(request, 'booking/activities.html', {'userData': userData, 'name': userData.name.split()})
 
 
 def profilePage(request):
-    return render(request, 'booking/profilePage.html')
+    if not request.session.has_key('uid'):
+        return redirect('sign_in')
+    userData = MySiteUser.objects.filter(email=request.session["uid"])
+    if request.method == 'POST':
+        firstName = request.POST['user_firstName']
+        lastName = request.POST['user_lastName']
+        location = request.POST['user_location']
+        gender = request.POST['user_gender']
+        postal_code = request.POST['user_postal_code']
+
+        userData.update(name=f"{firstName} {lastName}",
+                        location=location, gender=gender, postal_code=postal_code)
+    print(userData)
+    return render(request, 'booking/profilePage.html', {'userData': userData[0], 'name': userData[0].name.split()})
