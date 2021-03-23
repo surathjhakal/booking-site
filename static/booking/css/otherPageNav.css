@@ -4,24 +4,25 @@ body {
 .navbar {
   background-color: #582c2c;
 }
-.navbar_right ul li a:hover,
+.navbar_right > ul > li > a:hover,
 .navbar_location:hover,
-.navbar_profile:hover ,
-.navbar_area:hover{
+.navbar_profile:hover,
+.navbar_area:hover {
   background-color: white;
   color: #4b2222;
 }
 
-.navbar_location option {
+.navbar_location > option {
   background-color: white;
 }
 
-.page{
+.page {
   background-color: #582c2c;
   color: white;
 }
 
-.page a, .page h1  {
+.page > a,
+.page > h1 {
   color: white;
 }
 
@@ -34,6 +35,7 @@ body {
   color: #4b2222;
 }
 
-.navbar_location:hover,.page a:hover{
+.navbar_location:hover,
+.page > a:hover {
   color: #4b2222;
 }
