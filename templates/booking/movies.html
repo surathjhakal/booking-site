@@ -1,8 +1,5 @@
 {% extends './base.html' %} {% load static %} {% block style %}
 <link rel="stylesheet" href="{% static 'booking/css/otherPageNav.css' %}" />
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
     .checked {
         color: orange;
@@ -22,9 +19,6 @@
     }
 </style>
 {% endblock %} {% block content %}
-<div style="width: 100%; padding: 0.7em; background-color:red;">
-  <h4 style="color: #ffffff;">Upcoming Movies</h4>
-</div>
 <div id="mainDiv">
 
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -48,7 +42,7 @@
           <span class="sr-only">Next</span>
       </a>
   </div>
-  <div style="width: 100%; padding: 0.7em; background-color:red; margin-top: 2em; margin-bottom: 2em;">
+  <div style="width: 100%; padding: 0.7em; background-color:#582c2c; margin-top: 2em; margin-bottom: 2em;">
       <h4 style="color: #ffffff;">Movies</h4>
   </div>
   <div class="container">
@@ -197,74 +191,90 @@
                   </div>
               </div>
           </div>
+          <div style="margin-bottom:1em;" class="col-lg-3">
+            <div style="cursor:pointer" class="card style_prevu_kit" movieName="Light Between Oceans"
+                movieRating="7.8" onclick="openPopup(this)" style="width: 15rem;">
+                <img class="card-img-top" height="250" width="150" src="{% static 'booking/images/tom.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                    <div style="display: flex;justify-content: center;" class="row">
+                        <h5> Tom & Jerry</h5>
+                    </div>
+                    <div style="display: flex;justify-content: center;" class="row">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="margin-bottom:1em;" class="col-lg-3">
+            <div style="cursor:pointer" class="card style_prevu_kit" movieName="Light Between Oceans"
+                movieRating="7.8" onclick="openPopup(this)" style="width: 15rem;">
+                <img class="card-img-top" height="250" width="150" src="{% static 'booking/images/saina.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                    <div style="display: flex;justify-content: center;" class="row">
+                        <h5>Saina</h5>
+                    </div>
+                    <div style="display: flex;justify-content: center;" class="row">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="margin-bottom:1em;" class="col-lg-3">
+            <div style="cursor:pointer" class="card style_prevu_kit" movieName="Light Between Oceans"
+                movieRating="7.8" onclick="openPopup(this)" style="width: 15rem;">
+                <img class="card-img-top" height="250" width="150" src="{% static 'booking/images/jathi.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                    <div style="display: flex;justify-content: center;" class="row">
+                        <h5>Jathi Ratnalu</h5>
+                    </div>
+                    <div style="display: flex;justify-content: center;" class="row">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="margin-bottom:1em;" class="col-lg-3">
+            <div style="cursor:pointer" class="card style_prevu_kit" movieName="Godzilla vs Kong"
+                movieRating="7.8" onclick="openPopup(this)" style="width: 15rem;">
+                <img class="card-img-top" height="250" width="150" src="{% static 'booking/images/god.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                    <div style="display: flex;justify-content: center;" class="row">
+                        <h5>Godzilla vs Kong</h5>
+                    </div>
+                    <div style="display: flex;justify-content: center;" class="row">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
       </div>
   </div>
 </div>
 <!-- Footer -->
 <footer class="text-center bg-dark text-white" style="background-color: #caced1;">
   <!-- Grid container -->
-  <div class="container p-4">
-      <!-- Section: Images -->
-      <section class="">
-          <div class="row">
-              <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                  <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
-                      <img src="{% static 'booking/images/4.jpg' %}" class="w-100" />
-                      <a href="#!">
-                          <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
-                      </a>
-                  </div>
-              </div>
-              <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                  <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
-                      <img src="{% static 'booking/images/5.jpg' %}" class="w-100" />
-                      <a href="#!">
-                          <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
-                      </a>
-                  </div>
-              </div>
-              <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                  <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
-                      <img src="{% static 'booking/images/6.jpg' %}" class="w-100" />
-                      <a href="#!">
-                          <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
-                      </a>
-                  </div>
-              </div>
-              <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                  <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
-                      <img src="{% static 'booking/images/7.jpg' %}" class="w-100" />
-                      <a href="#!">
-                          <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
-                      </a>
-                  </div>
-              </div>
-              <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                  <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
-                      <img src="{% static 'booking/images/2.jpg' %}" class="w-100" />
-                      <a href="#!">
-                          <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
-                      </a>
-                  </div>
-              </div>
-              <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-                  <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
-                      <img src="{% static 'booking/images/3.jpg' %}" class="w-100" />
-                      <a href="#!">
-                          <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
-                      </a>
-                  </div>
-              </div>
-          </div>
-      </section>
-      <!-- Section: Images -->
-  </div>
   <!-- Grid container -->
 
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2020 Copyright:
-      <a class="text-white" href="#">Azam</a>
+      © 2021 Copyright:
+      <a class="text-white" href="#">Ticketrrr.in</a>
   </div>
   <!-- Copyright -->
 </footer>
@@ -331,17 +341,4 @@
   </div>
 </div>
 {% endblock %} {% block script %}
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script>
-    function openPopup(data) {
-      $("#movieHeading").text("Movie name - " + $(data).attr("movieName"));
-      $("#movieRatingView").text("Rating - " + $(data).attr("movieRating"));
-        $("#openModal").trigger("click");
-      }
-      $("#paymentBtn").click(function () {
-        $(".formData").val("")
-      })
-  </script>
 {% endblock %}

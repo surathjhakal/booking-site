@@ -104,3 +104,11 @@ def profilePage(request):
                         location=location, gender=gender, postal_code=postal_code)
     print(userData)
     return render(request, 'booking/profilePage.html', {'userData': userData[0], 'name': userData[0].name.split()})
+
+
+def contactUs(request):
+    return render(request, 'booking/contactUs.html')
+
+
+def aboutUs(request):
+    return render(request, 'booking/aboutUs.html')

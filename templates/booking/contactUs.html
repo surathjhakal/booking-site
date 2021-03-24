@@ -1,0 +1,43 @@
+{% extends './base.html' %} {% load static %} {% block style %}
+<link rel="stylesheet" href="{% static 'booking/css/otherPageNav.css' %}" />
+<link rel="stylesheet" href="{% static 'booking/css/contactUs.css' %}" />
+{% endblock %} {% block content %}
+
+<div class="contactUs">
+  <h1 class="contactUs_title">CONTACT US</h1>
+  <form class="contactUs_form">
+    <label for="fname">Full Name</label>
+    <input
+      type="text"
+      id="fname"
+      name="contactUs_fullname"
+      placeholder="Your full name.."
+    />
+    <br />
+    <label for="email">Email Id</label>
+    <input
+      type="text"
+      class="contactUs_email"
+      name="email"
+      placeholder="Your email id.."
+    />
+    <br />
+    <label for="Issue">Issues regarding</label>
+    <select id="Issue" name="Select issue">
+      <option value="Functioning of website">Functioning of website</option>
+      <option value="Payment">Payment</option>
+      <option value="booking">Booking</option>
+    </select>
+
+    <label for="Issue">Tell us about you issue</label>
+    <textarea
+      class="contactUs_issue"
+      name="Issue"
+      placeholder="Write about your issue...."
+      style="height: 200px"
+    ></textarea>
+
+    <button type="submit" class="form_submit">Submit</button>
+  </form>
+</div>
+{% endblock %}

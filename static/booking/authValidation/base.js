@@ -39,3 +39,13 @@ function showProfile() {
 }
 // console.log(window.location.pathname);
 navbar_profile.addEventListener("click", showProfile);
+
+function openPopup(data) {
+  $("#movieHeading").text($(data).attr("movieName"));
+  $("#movieRatingView").text($(data).attr("movieRating"));
+  $("#openModal").trigger("click");
+}
+
+$("#paymentBtn").click(function () {
+  $(".formData").val("");
+});

@@ -1,0 +1,20 @@
+{% extends './base.html' %} {% load static %} {% block style %}
+<link rel="stylesheet" href="{% static 'booking/css/otherPageNav.css' %}" />
+<link rel="stylesheet" href="{% static 'booking/css/aboutUs.css' %}" />
+{% endblock %} {% block content %}
+
+<div class="aboutUs">
+  <h1 class="aboutUs_title">About Us</h1>
+  <div class="aboutUs_info">
+    <h2 class="aboutUs_info_title">Content</h2>
+    <p class="aboutUs_info_content">
+      Ticketerrrr was created in March,2021 by Surath Jhakal, Tanay Giri , Azam
+      Kudia and Yash Sindhav. We help you to book tickets to enjoy watching your
+      favurite Movies, Sports Matches, vist your favourite Amusement Parks and
+      Stand Up Comedy Shows full of laughter. We save your time by helping you
+      to book tickets for you to enjoy with your friends or family.
+    </p>
+  </div>
+</div>
+
+{% endblock %}

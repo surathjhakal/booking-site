@@ -24,7 +24,11 @@
     <nav class="navbar">
       <h1 class="navbar_title"><a href="{% url 'index' %}">Ticketrrr </a></h1>
       <div class="navbar_search">
-        <input type="text" class="navbar_input" placeholder="Enter anything" />
+        <input
+          type="text"
+          class="navbar_input"
+          placeholder="Search for any show eg: Standup in bandra"
+        />
         <i style="color: grey; cursor: pointer" class="fas fa-search"></i>
       </div>
       <div class="navbar_right">
@@ -55,8 +59,8 @@
       <a href="#">Notifications</a>
       <a href="#">Booking History</a>
       <a href="#">Rewards</a>
-      <a href="#">Donate</a>
-      <a href="#">Help & Support</a>
+      <a href="{% url 'aboutUs' %}">About Us</a>
+      <a href="{% url 'contactUs' %}">Contact Us</a>
       <a href="#">Settings</a>
       <a id="log_out" href="{% url 'log_out' %}">Logout </a>
     </div>
@@ -64,5 +68,8 @@
     <div class="dim"></div>
   </body>
   <script src="{% static 'booking/authValidation/base.js' %}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   {% block script %} {% endblock %}
 </html>
