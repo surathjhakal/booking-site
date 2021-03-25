@@ -42,7 +42,7 @@ navbar_profile.addEventListener("click", showProfile);
 
 function openPopup(data) {
   $("#movieHeading").text($(data).attr("movieName"));
-  $("#movieRatingView").text($(data).attr("movieRating"));
+  $("#movieRatingView").text("Rate: " + $(data).attr("movieRating"));
   $("#openModal").trigger("click");
 }
 

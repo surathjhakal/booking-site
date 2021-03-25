@@ -1,0 +1,40 @@
+.checked {
+  color: orange;
+}
+
+.style_prevu_kit:hover {
+  box-shadow: 0px 0px 7px #838383;
+  z-index: 2;
+  -webkit-transition: all 100ms ease-in;
+  -webkit-transform: scale(1.05);
+  -ms-transition: all 100ms ease-in;
+  -ms-transform: scale(1.05);
+  -moz-transition: all 100ms ease-in;
+  -moz-transform: scale(1.05);
+  transition: all 100ms ease-in;
+  transform: scale(1.05);
+}
+#mainDiv {
+  padding: 0 2rem;
+  padding-top: 1rem;
+  background-color: rgb(221, 221, 221);
+  /* height: 100vh; */
+}
+
+body {
+  background-color: rgb(221, 221, 221);
+}
+
+.pages_title {
+  width: 100%;
+  padding: 0.7em;
+  background-color: #582c2c;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border-radius: 0.6rem;
+}
+
+#page_topic {
+  color: #ffffff;
+  text-align: center;
+}

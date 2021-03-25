@@ -107,8 +107,14 @@ def profilePage(request):
 
 
 def contactUs(request):
-    return render(request, 'booking/contactUs.html')
+    if not request.session.has_key('uid'):
+        return redirect('sign_in')
+    userData = MySiteUser.objects.get(email=request.session["uid"])
+    return render(request, 'booking/contactUs.html', {'userData': userData, 'name': userData.name.split()})
 
 
 def aboutUs(request):
-    return render(request, 'booking/aboutUs.html')
+    if not request.session.has_key('uid'):
+        return redirect('sign_in')
+    userData = MySiteUser.objects.get(email=request.session["uid"])
+    return render(request, 'booking/aboutUs.html', {'userData': userData, 'name': userData.name.split()})

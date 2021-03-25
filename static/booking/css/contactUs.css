@@ -6,6 +6,8 @@
   width: 100%;
   font-size: 2em;
   color: black;
+  background-color: rgb(221, 221, 221);
+  height: 100vh;
 }
 
 .contactUs_title {

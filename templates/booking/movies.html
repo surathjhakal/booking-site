@@ -1,23 +1,6 @@
 {% extends './base.html' %} {% load static %} {% block style %}
 <link rel="stylesheet" href="{% static 'booking/css/otherPageNav.css' %}" />
-<style>
-    .checked {
-        color: orange;
-    }
-
-    .style_prevu_kit:hover {
-        box-shadow: 0px 0px 7px #838383;
-        z-index: 2;
-        -webkit-transition: all 100ms ease-in;
-        -webkit-transform: scale(1.05);
-        -ms-transition: all 100ms ease-in;
-        -ms-transform: scale(1.05);
-        -moz-transition: all 100ms ease-in;
-        -moz-transform: scale(1.05);
-        transition: all 100ms ease-in;
-        transform: scale(1.05);
-    }
-</style>
+<link rel="stylesheet" href="{% static 'booking/css/pages.css' %}" />
 {% endblock %} {% block content %}
 <div id="mainDiv">
 
@@ -42,13 +25,13 @@
           <span class="sr-only">Next</span>
       </a>
   </div>
-  <div style="width: 100%; padding: 0.7em; background-color:#582c2c; margin-top: 2em; margin-bottom: 2em;">
-      <h4 style="color: #ffffff;">Movies</h4>
+  <div class="pages_title">
+      <h4 id="page_topic">Movies</h4>
   </div>
   <div class="container">
       <div style="margin-bottom: 2em;" class="row">
           <div style="margin-bottom: 1em;" class="col-lg-3">
-              <div style="cursor:pointer" class="card style_prevu_kit" movieName="Don't Breathe" movieRating="7.0"
+              <div style="cursor:pointer" class="card style_prevu_kit" movieName="Don't Breathe" movieRating="₹250 onwards"
                   onclick="openPopup(this)" style="width: 15rem;">
                   <img class="card-img-top" height="250" width="150" src="{% static 'booking/images/h2.jpg' %}" alt="Card image cap">
                   <div class="card-body">
@@ -66,7 +49,7 @@
               </div>
           </div>
           <div style="margin-bottom:1em;" class="col-lg-3">
-              <div style="cursor:pointer" class="card style_prevu_kit" movieName="The Vell" movieRating="7.8"
+              <div style="cursor:pointer" class="card style_prevu_kit" movieName="The Vell" movieRating="₹250 onwards"
                   onclick="openPopup(this)" style="width: 15rem;">
                   <img class="card-img-top" height="250" width="150" src="{% static 'booking/images/h6.jpg' %}" alt="Card image cap">
                   <div class="card-body">
@@ -84,7 +67,7 @@
               </div>
           </div>
           <div style="margin-bottom:1em;" class="col-lg-3">
-              <div style="cursor:pointer" class="card style_prevu_kit" movieName="Hush" movieRating="6.8"
+              <div style="cursor:pointer" class="card style_prevu_kit" movieName="Hush" movieRating="₹250 onwards"
                   onclick="openPopup(this)" style="width: 15rem;">
                   <img class="card-img-top" height="250" width="150" src="{% static 'booking/images/h4.jpg' %}" alt="Card image cap">
                   <div class="card-body">
@@ -102,7 +85,7 @@
               </div>
           </div>
           <div style="margin-bottom:1em;" class="col-lg-3">
-              <div style="cursor:pointer" class="card style_prevu_kit" movieName="War Dogs" movieRating="5.8"
+              <div style="cursor:pointer" class="card style_prevu_kit" movieName="War Dogs" movieRating="₹250 onwards"
                   onclick="openPopup(this)" style="width: 15rem;">
                   <img class="card-img-top" height="250" width="150" src="{% static 'booking/images/m1.jpg' %}" alt="Card image cap">
                   <div class="card-body">
@@ -120,7 +103,7 @@
               </div>
           </div>
           <div style="margin-bottom:1em;" class="col-lg-3">
-              <div style="cursor:pointer" class="card style_prevu_kit" movieName="Bad Moms" movieRating="7.4"
+              <div style="cursor:pointer" class="card style_prevu_kit" movieName="Bad Moms" movieRating="₹250 onwards"
                   onclick="openPopup(this)" style="width: 15rem;">
                   <img class="card-img-top" height="250" width="150" src="{% static 'booking/images/m2.jpg' %}" alt="Card image cap">
                   <div class="card-body">
@@ -139,7 +122,7 @@
           </div>
           <div style="margin-bottom:1em;" class="col-lg-3">
               <div style="cursor:pointer" class="card style_prevu_kit" movieName="Light Between Oceans"
-                  movieRating="7.8" onclick="openPopup(this)" style="width: 15rem;">
+                  movieRating="₹250 onwards" onclick="openPopup(this)" style="width: 15rem;">
                   <img class="card-img-top" height="250" width="150" src="{% static 'booking/images/m7.jpg' %}" alt="Card image cap">
                   <div class="card-body">
                       <div style="display: flex;justify-content: center;" class="row">
@@ -156,7 +139,7 @@
               </div>
           </div>
           <div style="margin-bottom:1em;" class="col-lg-3">
-              <div style="cursor:pointer" class="card style_prevu_kit" movieName="Dirty Granpa" movieRating="7.8"
+              <div style="cursor:pointer" class="card style_prevu_kit" movieName="Dirty Granpa" movieRating="₹250 onwards"
                   onclick="openPopup(this)" style="width: 15rem;">
                   <img class="card-img-top" height="250" width="150" src="{% static 'booking/images/c2.jpg' %}" alt="Card image cap">
                   <div class="card-body">
@@ -175,7 +158,7 @@
           </div>
           <div style="margin-bottom:1em;" class="col-lg-3">
               <div style="cursor:pointer" class="card style_prevu_kit" movieName="War On Everyone"
-                  movieRating="7.8" onclick="openPopup(this)" style="width: 15rem;">
+                  movieRating="₹250 onwards" onclick="openPopup(this)" style="width: 15rem;">
                   <img class="card-img-top" height="250" width="150" src="{% static 'booking/images/c12.jpg' %}" alt="Card image cap">
                   <div class="card-body">
                       <div style="display: flex;justify-content: center;" class="row">
@@ -193,7 +176,7 @@
           </div>
           <div style="margin-bottom:1em;" class="col-lg-3">
             <div style="cursor:pointer" class="card style_prevu_kit" movieName="Light Between Oceans"
-                movieRating="7.8" onclick="openPopup(this)" style="width: 15rem;">
+                movieRating="₹250 onwards" onclick="openPopup(this)" style="width: 15rem;">
                 <img class="card-img-top" height="250" width="150" src="{% static 'booking/images/tom.jpg' %}" alt="Card image cap">
                 <div class="card-body">
                     <div style="display: flex;justify-content: center;" class="row">
@@ -211,7 +194,7 @@
         </div>
         <div style="margin-bottom:1em;" class="col-lg-3">
             <div style="cursor:pointer" class="card style_prevu_kit" movieName="Light Between Oceans"
-                movieRating="7.8" onclick="openPopup(this)" style="width: 15rem;">
+                movieRating="₹250 onwards" onclick="openPopup(this)" style="width: 15rem;">
                 <img class="card-img-top" height="250" width="150" src="{% static 'booking/images/saina.jpg' %}" alt="Card image cap">
                 <div class="card-body">
                     <div style="display: flex;justify-content: center;" class="row">
@@ -229,7 +212,7 @@
         </div>
         <div style="margin-bottom:1em;" class="col-lg-3">
             <div style="cursor:pointer" class="card style_prevu_kit" movieName="Light Between Oceans"
-                movieRating="7.8" onclick="openPopup(this)" style="width: 15rem;">
+                movieRating="₹250 onwards" onclick="openPopup(this)" style="width: 15rem;">
                 <img class="card-img-top" height="250" width="150" src="{% static 'booking/images/jathi.jpg' %}" alt="Card image cap">
                 <div class="card-body">
                     <div style="display: flex;justify-content: center;" class="row">
@@ -247,7 +230,7 @@
         </div>
         <div style="margin-bottom:1em;" class="col-lg-3">
             <div style="cursor:pointer" class="card style_prevu_kit" movieName="Godzilla vs Kong"
-                movieRating="7.8" onclick="openPopup(this)" style="width: 15rem;">
+                movieRating="₹250 onwards" onclick="openPopup(this)" style="width: 15rem;">
                 <img class="card-img-top" height="250" width="150" src="{% static 'booking/images/god.jpg' %}" alt="Card image cap">
                 <div class="card-body">
                     <div style="display: flex;justify-content: center;" class="row">
@@ -273,9 +256,17 @@
 
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2021 Copyright:
-      <a class="text-white" href="#">Ticketrrr.in</a>
-  </div>
+    <div class="icons">
+        <i class="fab fa-instagram fa-2x icon" style="margin-right: 14px;cursor: pointer;"></i>
+        <i class="fab fa-github fa-2x icon" style="margin-right: 14px;cursor: pointer;"></i>
+        <i class="fab fa-linkedin fa-2x icon" style="margin-right: 14px;cursor: pointer;"></i>
+        <i class="fab fa-facebook-square fa-2x icon" style="margin-right: 14px;cursor: pointer;"></i>
+    </div>
+    <div style="font-size: 1.4rem;padding-top: 10px;">
+        © 2020 Copyright: 
+        <a class="text-white" href="#">Ticketerrr.in</a>
+    </div>
+</div>
   <!-- Copyright -->
 </footer>
 <!-- Footer -->
@@ -333,8 +324,7 @@
               </div>
           </div>
           <div class="modal-footer">
-              <button id="paymentBtn" type="button" class="btn btn-success" data-dismiss="modal">Proceed to
-                  payment</button>
+            <a style="text-decoration: none;color: white;" href="{% url 'payment' %}"><button id="paymentBtn" type="button" class="btn btn-success" >Proceed to payment</button></a>
           </div>
       </div>
 

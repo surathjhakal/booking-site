@@ -29,19 +29,13 @@
 <script>
   let i = 0;
   let txt =
-    "The tickets for your favourite movies,concerts,sporting events are just oneclick away.";
+    "The tickets for your favourite movies,concerts,sporting events are just one click away.";
 
   function typeWriter() {
     if (i < txt.length) {
       document.getElementById("home_info").innerHTML += txt.charAt(i);
       i++;
-      setTimeout(typeWriter, 100);
-    } else {
-      setTimeout(() => {
-        i = 0;
-        document.getElementById("home_info").innerHTML = "";
-        typeWriter();
-      }, 1000);
+      setTimeout(typeWriter, 70);
     }
   }
   typeWriter();

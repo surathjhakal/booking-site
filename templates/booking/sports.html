@@ -1,23 +1,7 @@
 {% extends './base.html' %} {% load static %} {% block style %}
 <link rel="stylesheet" href="{% static 'booking/css/otherPageNav.css' %}" />
-    <style>
-        .checked {
-            color: orange;
-        }
+<link rel="stylesheet" href="{% static 'booking/css/pages.css' %}" />
 
-        .style_prevu_kit:hover {
-            box-shadow: 0px 0px 7px #838383;
-            z-index: 2;
-            -webkit-transition: all 100ms ease-in;
-            -webkit-transform: scale(1.05);
-            -ms-transition: all 100ms ease-in;
-            -ms-transform: scale(1.05);
-            -moz-transition: all 100ms ease-in;
-            -moz-transform: scale(1.05);
-            transition: all 100ms ease-in;
-            transform: scale(1.05);
-        }
-    </style>
 
 {% endblock %} {% block content %}
 <div id="mainDiv">
@@ -43,8 +27,8 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-    <div style="width: 100%; padding: 0.7em; background-color:red; margin-top: 2em; margin-bottom: 2em;">
-        <h4 style="color: #ffffff;">Events</h4>
+    <div class="pages_title">
+        <h4 id="page_topic">Sports</h4>
     </div>
     <div class="container">
         <div style="margin-bottom: 2em;" class="row">
@@ -54,7 +38,7 @@
                     <img class="card-img-top" height="250" width="150" src="{% static 'booking/images/k1.jpg' %}" alt="Card image cap">
                     <div class="card-body">
                         <div style="display: flex;justify-content: center;" class="row">
-                            <h5>Free fire solo and squad</h5>
+                            <h5>Free fire solo and squad live</h5>
                             <p>Online</p><br>
                           
                         </div>
@@ -239,8 +223,16 @@
 
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2020 Copyright:
-        <a class="text-white" href="#"></a>
+        <div class="icons">
+            <i class="fab fa-instagram fa-2x icon" style="margin-right: 14px;cursor: pointer;"></i>
+            <i class="fab fa-github fa-2x icon" style="margin-right: 14px;cursor: pointer;"></i>
+            <i class="fab fa-linkedin fa-2x icon" style="margin-right: 14px;cursor: pointer;"></i>
+            <i class="fab fa-facebook-square fa-2x icon" style="margin-right: 14px;cursor: pointer;"></i>
+        </div>
+        <div style="font-size: 1.4rem;padding-top: 10px;">
+            © 2020 Copyright: 
+            <a class="text-white" href="#">Ticketerrr.in</a>
+        </div>
     </div>
     <!-- Copyright -->
 </footer>
@@ -291,11 +283,7 @@
                     <div class="row form-group">
                         <input type="number" class="form-control formData" placeholder="Contact number">
                     </div>
-                    <div class="row form-group">images/ac1.jpg
-                        images/ac2.png
-                        images/ac1.jpg
-                        images/ac2.png
-                        images/ac1.jpg
+                    <div class="row form-group">
                         <input type="number" class="form-control formData" placeholder="Number of tickets">
                     </div>
                     </form>
@@ -303,9 +291,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button id="paymentBtn" type="button" class="btn btn-success" data-dismiss="modal">Proceed to
-                    payment</button>
-            </div>
+                <a style="text-decoration: none;color: white;" href="{% url 'payment' %}"><button id="paymentBtn" type="button" class="btn btn-success" >Proceed to payment</button></a>
+              </div>
         </div>
 
     </div>
