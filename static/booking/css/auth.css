@@ -5,19 +5,10 @@
 
 body {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url("../images/background.jpg") no-repeat fixed;
+    url("../images/Finallogo1.png") no-repeat fixed;
   font-family: sans-serif;
   background-size: cover;
-}
-
-.auth_title {
-  color: white;
-  padding-top: 1.4rem;
-  padding-left: 1.8rem;
-  font-weight: 400;
-  letter-spacing: 2px;
-  color: #dadada;
-  font-size: 3rem;
+  background-position: top;
 }
 
 .auth {
@@ -25,7 +16,7 @@ body {
   height: 650px;
   background: #fff;
   color: #b33939;
-  top: 50%;
+  top: 58%;
   left: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
